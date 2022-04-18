@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>File Upload</title>
+  </head>
+  <body>
+    <h1 style="color: #4485b8; text-align: center;">Cat Breed Prediction with Deep Learning</h1>
+    <p></p>
+    <p style="text-align: center;"><img src="static/zoomy.jpg" alt="Cat Picture" width="280" height="354"></p>
+    <p style="text-align: center;">Upload a picture right now to find out what breed she/he is!</p>
+    <p style="text-align: center;"></p>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        {{ form.image }}
+        <button type="submit">upload</button>
+    </form>
+    {% for mesg in get_flashed_messages() %}
+    <h1 style="text-align: center;">{{ mesg }}</h1>
+    {% endfor %}
+  </body>
+</html>
